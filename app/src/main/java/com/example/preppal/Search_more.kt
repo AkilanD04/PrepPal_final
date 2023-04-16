@@ -4,9 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -18,7 +16,6 @@ import kotlinx.coroutines.withContext
 import okhttp3.*
 import org.json.JSONArray
 import org.json.JSONObject
-import java.io.IOException
 import java.net.HttpURLConnection
 import java.net.URL
 
@@ -87,17 +84,17 @@ class Search_more : AppCompatActivity() {
         }
     }
 
-    suspend fun parseJSON(response: String) {
+    fun parseJSON(response: String) {
         val json = JSONObject(response)
         val jsonArray: JSONArray = json.getJSONArray("meals")
         for (i in 0 until jsonArray.length()) {
             val meal: JSONObject = jsonArray[i] as JSONObject
             val mealId = meal["idMeal"] as String
-            get_meal_with_id(mealId, out, this)
+            get_meal_with_id(mealId)
         }
     }
 
-    private fun get_meal_with_id(mealId: String, out: TextView, context: Context) {
+    private fun get_meal_with_id(mealId: String) {
         val url_string = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}"
         val url = URL(url_string)
         val con: HttpURLConnection = url.openConnection() as HttpURLConnection

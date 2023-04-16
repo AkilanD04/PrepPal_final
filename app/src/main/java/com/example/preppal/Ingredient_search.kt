@@ -116,17 +116,17 @@ class Ingredient_search : AppCompatActivity() {
 
     }
 
-    suspend fun parseJSON_with_id(response: String) {
+    fun parseJSON_with_id(response: String) {
         val json = JSONObject(response)
         val jsonArray: JSONArray = json.getJSONArray("meals")
         for (i in 0 until jsonArray.length()) {
             val meal: JSONObject = jsonArray[i] as JSONObject
             val mealid = meal["idMeal"]
-            get_meal_with_id(mealid as String, out, this)
+            get_meal_with_id(mealid as String)
         }
     }
 
-    suspend fun parseJSON_get_meals(response: String) {
+    fun parseJSON_get_meals(response: String) {
         val json = JSONObject(response)
         val jsonArray: JSONArray = json.getJSONArray("meals")
         for (i in 0 until jsonArray.length()) {
@@ -655,7 +655,7 @@ class Ingredient_search : AppCompatActivity() {
         }
     }
 
-    private fun get_meal_with_id(mealId: String, out: TextView, context: Context) {
+    private fun get_meal_with_id(mealId: String) {
         val url_string = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}"
         val url = URL(url_string)
         val con: HttpURLConnection = url.openConnection() as HttpURLConnection
