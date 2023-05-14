@@ -80,7 +80,7 @@ class Search_food : AppCompatActivity() {
                     // Display meal details for each meal in the list
                     for (m in meal_list) {
                         out.append(
-                            "\nmeal id: ${m.id} \nmeal name: ${m.Meal} \nDrinkAlternate: ${m.DrinkAlternate} \nCategory: ${m.Category} \narea: ${m.Area} \ninstructions: ${m.Instructions}" +
+                            "\nmeal name: ${m.Meal} \nDrinkAlternate: ${m.DrinkAlternate} \nCategory: ${m.Category} \narea: ${m.Area} \ninstructions: ${m.Instructions}" +
                                     "\nmeal thumb: ${m.MealThumb} \ntags: ${m.Tags} \nyoutubeLink: ${m.YoutubeLink} \ningredient1: ${m.Ingredient1} \ningredient2: ${m.Ingredient2}" +
                                     "\ningredient3: ${m.Ingredient3} \ningredient4: ${m.Ingredient4} \ningredient5: ${m.Ingredient5} \ningredient6: ${m.Ingredient6} \ningredient7: ${m.Ingredient6}" +
                                     "\ningredient8: ${m.Ingredient8} \ningredient9: ${m.Ingredient9} \ningredient10: ${m.Ingredient10} \ningredient11: ${m.Ingredient11} \ningredient12: ${m.Ingredient12}" +

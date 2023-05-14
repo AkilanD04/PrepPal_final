@@ -97,6 +97,7 @@ class Ingredient_search : AppCompatActivity() {
     private fun fetch_details(ingredient_in: EditText, context: Context) {
         out.text = " "
         val url_string = "https://themealdb.com/api/json/v1/1/filter.php?i=${ingredient_in.text}"
+        Log.d("activity",url_string)
         val url = URL(url_string)
         val con: HttpURLConnection = url.openConnection() as HttpURLConnection
         CoroutineScope(Dispatchers.Main).launch {
@@ -633,7 +634,7 @@ class Ingredient_search : AppCompatActivity() {
                 arr += measure19
                 arr += measure20
                 out.append(
-                    "\nmeal id: $mealId \nmeal name: $mealName \nDrinkAlternate: $drinkAlternate \nCategory: $category " +
+                    "\nmeal name: $mealName \nDrinkAlternate: $drinkAlternate \nCategory: $category " +
                             "\narea: $area \ninstructions: $instructions \nmealThumb: $mealThumb \ntags: $tags " +
                             "\nyoutubeLink: $youtubeLink \ningredient1: $ingredient1 \ningredient2: $ingredient2 " +
                             "\ningredient3: $ingredient3 \ningredient4: $ingredient4 \ningredient5: $ingredient5 " +
@@ -657,6 +658,7 @@ class Ingredient_search : AppCompatActivity() {
 
     private fun get_meal_with_id(mealId: String) {
         val url_string = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}"
+        Log.d("activity",url_string)
         val url = URL(url_string)
         val con: HttpURLConnection = url.openConnection() as HttpURLConnection
         CoroutineScope(Dispatchers.Main).launch {
@@ -682,7 +684,7 @@ class Ingredient_search : AppCompatActivity() {
                 Log.d("activity", "the value is: $count")
                 var count2 = 0
                 for (i in 1..count) {
-                    Log.d("activity", "Meal id: ${arr[0]} meal name: ${arr[1]}")
+                    Log.d("activity", "Meal id: ${arr[count2]} meal name: ${arr[count2+1]}")
                     Log.d("activity", "====================================")
                     try {
                         mealDao.insertUsers(

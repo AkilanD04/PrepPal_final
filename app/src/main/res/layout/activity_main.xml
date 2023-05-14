@@ -20,8 +20,8 @@
 
     <Button
         android:id="@+id/search_more"
-        android:layout_width="269dp"
-        android:layout_height="62dp"
+        android:layout_width="276dp"
+        android:layout_height="69dp"
         android:layout_marginTop="644dp"
         android:fontFamily="sans-serif-condensed"
         android:text="Search for more.."
@@ -34,11 +34,11 @@
 
     <Button
         android:id="@+id/search_ingredient"
-        android:layout_width="269dp"
-        android:layout_height="62dp"
+        android:layout_width="276dp"
+        android:layout_height="69dp"
         android:layout_marginTop="476dp"
         android:fontFamily="sans-serif-condensed"
-        android:text="Search by ingredient"
+        android:text="Search for Meals By Ingredient"
         android:textSize="20sp"
         android:textStyle="bold|italic"
         app:cornerRadius="30dp"
@@ -49,25 +49,26 @@
 
     <Button
         android:id="@+id/Search"
-        android:layout_width="269dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="556dp"
+        android:layout_width="276dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="560dp"
         android:fontFamily="sans-serif-condensed"
-        android:text="Search"
+        android:text="Search for Meals"
         android:textSize="20sp"
         android:textStyle="bold|italic"
         app:cornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/ADD"
-        android:layout_width="269dp"
-        android:layout_height="62dp"
+        android:layout_width="276dp"
+        android:layout_height="69dp"
         android:layout_marginTop="392dp"
         android:fontFamily="sans-serif-condensed"
-        android:text="Add meals"
+        android:text="Add Meals to DB"
         android:textSize="20sp"
         android:textStyle="bold|italic"
         app:cornerRadius="30dp"

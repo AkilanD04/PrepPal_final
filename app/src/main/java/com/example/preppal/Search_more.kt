@@ -66,6 +66,7 @@ class Search_more : AppCompatActivity() {
     private fun show(text_in: EditText, context: Context) {
         out.text = " "
         val url_string = "https://www.themealdb.com/api/json/v1/1/search.php?s=${text_in.text}"
+        Log.d("activity",url_string)
         val url = URL(url_string)
         val con: HttpURLConnection = url.openConnection() as HttpURLConnection
         CoroutineScope(Dispatchers.Main).launch {
@@ -570,7 +571,7 @@ class Search_more : AppCompatActivity() {
                 }
             runOnUiThread {
                 out.append(
-                    "\nmeal id: $mealId \nmeal name: $mealName \nDrinkAlternate: $drinkAlternate \nCategory: $category " +
+                    "\nmeal name: $mealName \nDrinkAlternate: $drinkAlternate \nCategory: $category " +
                             "\narea: $area \ninstructions: $instructions \nmealThumb: $mealThumb \ntags: $tags " +
                             "\nyoutubeLink: $youtubeLink \ningredient1: $ingredient1 \ningredient2: $ingredient2 " +
                             "\ningredient3: $ingredient3 \ningredient4: $ingredient4 \ningredient5: $ingredient5 " +
